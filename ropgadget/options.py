@@ -77,6 +77,7 @@ class Options:
 
     def __reOption(self):
         new = []
+        re_strs = []
         if not self.__options.re:
             return
         if '|' in self.__options.re:
@@ -84,7 +85,7 @@ class Options:
             if 1 == len(re_strs):
                 re_strs = self.__options.re.split('|')
         else:
-            re_strs = self.__options.re
+            re_strs.append(self.__options.re)
 
         patterns = []
         for __re_str in re_strs:
